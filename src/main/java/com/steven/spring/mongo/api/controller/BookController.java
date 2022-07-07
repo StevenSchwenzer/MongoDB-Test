@@ -1,4 +1,4 @@
-package com.steven.spring.mongo.api.resource;
+package com.steven.spring.mongo.api.controller;
 
 import java.util.List;
 import java.util.Optional;
