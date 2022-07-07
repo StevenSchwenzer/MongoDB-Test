@@ -1,0 +1,39 @@
+1 - Create CRUD for a writer:
+The json/model of writer
+{
+    id
+    name
+    last name
+    List of Books
+}
+
+2 - create Swagger interface (hint: add dependecies on pom.xml and Swagger config on a new config package)
+(http://localhost:8080/swagger-ui.html)
+
+3 - Make another controller called ExchageRatesController which saves the data that reads from https://flexie.io/currency to database
+the model received should look like:
+
+"last_updated": "2022-07-06T15:06:23+00:00",
+    "currency": {
+        "USD": 115.78,
+        "EUR": 118.47,
+        "GBP": 138.2,
+        "CHF": 119.43,
+        "JPY": 85.6,
+        "AUD": 78.64,
+        "CAD": 88.8,
+        "SEK": 11,
+        "NOK": 11.47,
+        "DKK": 15.91,
+        "SDR": 153.22,
+        "XAU": 204489.48,
+        "XAG": 2222.98,
+        "CNY": 17.28,
+        "CNH": 17.26,
+        "TRY": 6.72
+    }
+
+    ExchageRate {
+    Timestamp timestap;
+    HashMap<String, String> currency;
+    }
