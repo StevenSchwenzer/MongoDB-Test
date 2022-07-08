@@ -10,8 +10,8 @@ The json/model of writer
 2 - create Swagger interface (hint: add dependecies on pom.xml and Swagger config on a new config package)
 (http://localhost:8080/swagger-ui.html)
 
-3 - Make another controller called ExchageRatesController which saves the data that reads from https://flexie.io/currency to database
-the model received should look like:
+3 - Make another controller called ExchageRatesController which prints the data that reads from https://flexie.io/currency
+the response received should look like:
 
 "last_updated": "2022-07-06T15:06:23+00:00",
     "currency": {
@@ -37,3 +37,10 @@ the model received should look like:
     Timestamp timestap;
     HashMap<String, String> currency;
     }
+
+4 - Add a scheduled process that reads the exchange rates every 2 minutes and saves everything to the database.
+Workflow:
+    - create a package name "scheduler"
+    - create inside it a file called ExchangeRateScheduler and autowire the ExchangeRepository and CurrencyClientAPI
+    - For the scheduling process use the @Scheduled annotation, check online how you can use it
+
