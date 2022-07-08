@@ -22,7 +22,7 @@ public class ExchangeController {
         @PostMapping("/addExchange")
         public String saveExchange(@RequestBody Exchange exchange) {
                 repository.save(exchange);
-                return "Added Exchange for ID: " + exchange.getId();
+                return "Added Exchange for ID: ";
         }
 
         @GetMapping("/findAllExchanges")
