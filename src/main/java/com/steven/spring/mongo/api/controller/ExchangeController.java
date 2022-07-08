@@ -1,5 +1,6 @@
 package com.steven.spring.mongo.api.controller;
 
+import com.steven.spring.mongo.api.client.CurrencyClientAPI;
 import com.steven.spring.mongo.api.model.Exchange;
 import com.steven.spring.mongo.api.repository.ExchangeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,9 @@ public class ExchangeController {
 
         @Autowired
         private ExchangeRepository repository;
+
+        @Autowired
+        private CurrencyClientAPI currencyClientAPI;
 
         @PostMapping("/addExchange")
         public String saveExchange(@RequestBody Exchange exchange) {
@@ -36,4 +40,11 @@ public class ExchangeController {
                 repository.deleteById(id);
                 return "Deleted Exchange with ID : " + id;
         }
+
+        @GetMapping("/getLiveCurrency")
+        public Exchange getLiveCurrency() {
+                //CurrencyClientAPI currencyClientAPI = new CurrencyClientAPI();
+                return currencyClientAPI.sendRestCall();
+        }
 }
+
