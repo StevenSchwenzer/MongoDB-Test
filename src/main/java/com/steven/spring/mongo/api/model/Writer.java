@@ -1,5 +1,7 @@
 package com.steven.spring.mongo.api.model;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,10 +13,11 @@ import lombok.ToString;
 @Setter
 @ToString
 
-@Document(collection = "Book")
-public class Book {
+@Document(collection = "Writer")
+public class Writer {
         @Id
         private int id;
-        private String bookName;
-        private String authorName;
+        private String name;
+        private String lastName;
+        private List<Book> writtenBooks;
 }
